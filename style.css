@@ -13,6 +13,24 @@ body{
     font-size: 20px;
     margin: 0px;
     padding: 0px;
+    animation-name: website_loading;
+    animation-duration: 1s;
+}
+@keyframes website_loading{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.bg1{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url("img/bg1.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    opacity: 0.8;
 }
 .top {
     display: grid;
@@ -22,11 +40,7 @@ body{
     grid-template-areas: 
     'prof  hero    hero'
     'sm     empty   menu';
-    background-image: url("img/bg1.jpg");
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    background-size: cover;
+    border-bottom: 1px solid black;
 }
 
 .profile_foto_container{
@@ -114,6 +128,8 @@ body{
 
 .hero .hello_there .hello,.there{
     display: flex;
+    -webkit-box-flex: 1;  /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: 1;      /* Safari 6.1+. iOS 7.1+, BB10 */
     flex-direction: row;
 }
 .hello_there .hello>*,.there>*{
@@ -153,10 +169,10 @@ body{
     }
     .hero{border-bottom: none; margin: 0 0 0 20px;}
     .hello_there{align-self: flex-start;}
-    .profile_foto_container{width: 200px;}
+    .profile_foto_container{width: 182px;}
     .name{grid-area: name; position: relative; top: -50px;}
     .name p{font-size: 20px; text-decoration: underline;}
-    .welcome {grid-area: name; margin: -20px 0 0 185px; /*min-width: 15px;*/}
+    .welcome {grid-area: name; margin: -20px 0 0 175px; /*min-width: 15px;*/}
     .welcome p{font-size: 14px;}
 
     .navbar{justify-content: center;}
@@ -197,54 +213,68 @@ body{
 }
 
 
+
+
+
+
+
+
 /*  REQUEST  -  Contact me & CV questions & buttons */
 .request{
     height: 350px;
     width: 100%;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 175px 175px;
     font-size: 30px;
     /*background-color: rgb(252, 252, 252);*/
-    background-image: url("img/bg1.jpg");
+    /*background-image: url("img/bg1.jpg");*/
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    border-top: 1px solid var(--black);
+    /*border-top: 1px solid var(--black);*/
 }
 .need_help,.abilities{
     grid-column: 2/3;
     display: flex;
+    -webkit-box-flex: 1;  /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: 1;      /* Safari 6.1+. iOS 7.1+, BB10 */
     flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 .need_help {padding-top: 60px;}
 .abilities {padding-bottom: 60px;}
 
 .question1 p, .question2 p{
     margin: auto auto;
-    padding: auto auto;
+    /*padding: auto auto;*/
     min-width: 500px;
     text-align: center;
 }
 .button1 p, .button2 p{
     margin: auto auto;
-    padding: auto auto;
     font-size: 20px;
+    color: var(--black);
     width: 250px;
     text-align: center;
     line-height: 45px;
+    text-decoration: none;
 }
+.need_help a, .abilities a{text-decoration: none;}
+
 .button1, .button2{
     background-color: rgba(0, 0, 0, 0.1);
     border: 1.5px solid var(--black);
     border-radius: 20px;
+    transition: all 0.2s ease-out;
 }
 
-/* buttons hover */
+/* buttons hover animation*/
 .button1:hover, .button2:hover{
+    transform: rotate(1deg);
     filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
 }
 
@@ -263,16 +293,17 @@ body{
     height: auto;
     width: 100%;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 50px auto;
     font-size: 30px;
     /*background-color: rgb(252, 252, 252);*/
-    background-image: url("img/bg1.jpg");
+    /*background-image: url("img/bg1.jpg");*/
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    border-top: 1px solid var(--black);
+    /*border-top: 1px solid var(--black);*/
 }
 .about_me .header_text{
     grid-column: 1/-1;
@@ -284,10 +315,12 @@ body{
     grid-column: 2/3;
     font-size: 20px;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 1fr 1fr;
 }
 .about_me .description_container .info{
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(5, auto);
     margin: 20px auto 100px 10%;
@@ -326,22 +359,28 @@ body{
 }
 
 
+
+
+
+
+
 /*  SKILLS  -  skill & progress bar */
 
 .skills{
     height: 450px;
     width: 100%;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 50px auto;
     font-size: 30px;
     /*background-color: rgb(252, 252, 252);*/
-    background-image: url("img/bg1.jpg");
+    /*background-image: url("img/bg1.jpg");*/
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    border-top: 1px solid var(--black);
+    /*border-top: 1px solid var(--black);*/
 }
 .skills .header_text{
     grid-column: 1/-1;
@@ -353,10 +392,12 @@ body{
     grid-column: 2/3;
     font-size: 20px;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 1fr 1fr;
 }
 .hard_container,.soft_container {
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(5, 50px);
 }
@@ -389,7 +430,11 @@ body{
 
 .skillbar>div {
     height: 100%;
-    background-image: -moz-linear-gradient(rgba(194, 49, 49, 0.85), rgba(41, 13, 6, 0.85));
+    background-color: rgba(194, 49, 49, 0.85); /* fallback color if gradients are not supported */
+    background-image: -webkit-linear-gradient(rgba(194, 49, 49, 0.85), rgba(41, 13, 6, 0.85)); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+    background-image:    -moz-linear-gradient(rgba(194, 49, 49, 0.85), rgba(41, 13, 6, 0.85)); /* For Firefox (3.6 to 15) */
+    background-image:      -o-linear-gradient(rgba(194, 49, 49, 0.85), rgba(41, 13, 6, 0.85)); /* For old Opera (11.1 to 12.0) */ 
+    background-image: linear-gradient(rgba(194, 49, 49, 0.85), rgba(41, 13, 6, 0.85));
     border-radius: 10px;
 }
 
@@ -421,21 +466,27 @@ body{
 }
 
 
+
+
+
+
+
 /*  PORTFOLIO  -  Project fotos & descriptions */
 
 .portfolio{
     width: 100%;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 1fr;
     grid-template-rows: 50px auto;
     font-size: 30px;
     /*background-color: rgb(252, 252, 252);*/
-    background-image: url("img/bg1.jpg");
+    /*background-image: url("img/bg1.jpg");*/
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    border-top: 1px solid var(--black);
+    /*border-top: 1px solid var(--black);*/
 }
 .portfolio .header_text{
     grid-column: 1/-1;
@@ -446,6 +497,7 @@ body{
 .album {
     margin: 30px auto 100px auto;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-gap: 50px;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -503,8 +555,15 @@ body{
     .album {grid-gap: 50px; grid-template-columns: 1fr 1fr;}
 }
 @media(max-width: 600px){
+    .portfolio .header_text{font-size:22px;}
     .album {grid-gap: 50px; grid-template-columns: 1fr; margin: 20px auto 100px auto}
 }
+
+
+
+
+
+
 
 
 
@@ -513,16 +572,17 @@ body{
     height: auto;
     width: 100%;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 0.4fr 1fr 0.4fr;
     grid-template-rows: 50px auto;
     font-size: 30px;
     /*background-color: rgb(252, 252, 252);*/
-    background-image: url("img/bg1.jpg");
+    /*background-image: url("img/bg1.jpg");*/
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    border-top: 1px solid var(--black);
+    /*border-top: 1px solid var(--black);*/
 }
 .contact .header_text{
     grid-column: 1/-1;
@@ -534,6 +594,7 @@ body{
     grid-column: 2/3;
     font-size: 20px;
     display: grid;
+    display: -ms-grid; /* IE 10 */
     grid-template-columns: 1fr 1fr;
     margin: 0 0 50px 0;
 }
@@ -570,6 +631,7 @@ body{
     }
 }
 @media(max-width: 600px){
+    .contact .header_text{font-size:22px;}
     .contact .contact_container{grid-template-columns: 1fr;}
     .memo{font-size: 15px; min-width: 100px;}
     .memo p{margin-right: 15px;}
@@ -623,13 +685,26 @@ body{
 
 
 
+
+
 /*   FOOTER - All rights reserved ©2019 Ryszard Polechoński   */
 .bottom_bar{
     height: 60px;
     font-size: 12px;
-    background-image: linear-gradient(white, rgb(253, 208, 166));
+    /*background-image: linear-gradient(white, rgb(253, 208, 166));*/
     display: flex;
+    -webkit-box-flex: 1;  /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: 1;      /* Safari 6.1+. iOS 7.1+, BB10 */
     justify-content: center;
     align-items: center;
-    border-top: 1.5px solid var(--black);
+    /*border-top: 1.5px solid rgba(0, 0, 0, 0.8);*/
+}
+
+
+.bg2{
+    background-image: url("img/bg5.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
 }
