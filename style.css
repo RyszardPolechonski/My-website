@@ -156,7 +156,7 @@ body{
 
 
 /*  resolution changes */
-@media (max-width: 805px) {
+@media (max-width: 820px) {
     .top{
         grid-template-columns: 1fr 0.01fr 1fr;
     }
