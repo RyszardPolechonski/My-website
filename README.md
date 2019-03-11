@@ -1,2 +1,2 @@
-# Project-I
+# My website
 Project I - my website
